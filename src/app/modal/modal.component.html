@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Create Task </h1>
+<div mat-dialog-content>
+ 
+      
+   
+        <textarea matInput [(ngModel)]="data.Description" placeholder="Write Soemthing" cols="35" rows="18"> </textarea>
+    </div>
+<div mat-dialog-actions class="flex-container">
+    <button mat-button class="btn btn-primary" (click)="onNoClick()">Cancel</button>
+    <button mat-button class="btn btn-primary"  [mat-dialog-close]="data.Description" cdkFocusInitial> <i class="fa fa-floppy-o" aria-hidden="true"></i>
+        Save</button>
+</div>

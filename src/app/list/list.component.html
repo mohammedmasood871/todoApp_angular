@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <header>
+    <h1>Task list </h1>
+    <button class="btn btn-primary add" (click)="open()"> <i class="fa fa-plus" aria-hidden="true"></i>
+       Add Task</button>
+  </header>
+
+
+  <div id="task-content">
+    <ul *ngFor="let task of taskarray; let i=index">
+      <li class="flex-container">
+        <span class="done btn " (click)="handleCheck($event,i)"> <input type="checkbox"> </span>
+
+        <span [ngClass]="task.done ? 'completed': 'todo'">{{task.task}}</span>
+
+        <span class="delete btn btn-danger" (click)="handleDelete(i)">delete</span>
+      </li>
+      <hr>
+     
+    </ul>
+  </div>
+  <div class="footer">
+    <div>    Total Tasks: {{taskarray.length}}
+    </div>
+  </div>
+</div>
